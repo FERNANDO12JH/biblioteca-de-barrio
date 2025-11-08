@@ -1,9 +1,13 @@
+
+
+
+
 //EQUIPO NUM 6 ---- TUNG TUNG  SAHUR 
 // NERY YAHIR GAMBOA MEJIA 
 // JORGE ALFREDO ZUNUM GOMEZ
 //ALEZANDER REYES LAN
 // NOE GOMEZ GARCIA 
-//JOSE FERNANDO DOMINGUEZ MONZON
+//JOSE FERNANDO DOMINGUEZ MONZON 
 
 
 #include <stdio.h>
@@ -124,12 +128,12 @@ int main() {
                     break;
                 }
                 
-                int limite_prestamos = 44; // Definimos el lÃ­mite aquÃ­
+                int limite_prestamos = 44; // Definimos el límite aquí
                 int alerta_encontrada = 0;
 
-                // Bucle para cada dÃ­a capturado
+                // Bucle para cada día capturado
                 for (i = 0; i < D; i++) {
-                    // Bucle para cada categorÃ­a
+                    // Bucle para cada categoría
                     for (j = 0; j < 4; j++) { 
                         // Verifica si los prestamos superan el limite de 44
                         if (prestamos[i][j] >= limite_prestamos) { 
@@ -140,7 +144,7 @@ int main() {
                     }
                 }
                 
-                // Si el bucle terminÃ³ sin encontrar ninguna alerta
+                // Si el bucle terminó sin encontrar ninguna alerta
                 if (alerta_encontrada == 0) {
                     printf("NO HAY ALERTAS, TODO EN ORDEN ^w^\n\n");
                 }
@@ -163,7 +167,7 @@ int main() {
                 } else {
                     printf("\n\t=== REPORTE FINAL CONSOLIDADO  ===\n");
                     
-                    // Recalcular la suma total de netos (necesario para el cÃ¡lculo de porcentaje)
+                    // Recalcular la suma total de netos (necesario para el cálculo de porcentaje)
                     int sumaTotalNetos = 0;
                     for (i = 0; i < 4; i++) {
                         sumaTotalNetos += totales[i];
@@ -175,17 +179,17 @@ int main() {
                     printf("------------------------------------------------------------------------\n");
 
                     for (i = 0; i < 4; i++) {
-                        // CÃ¡lculo de Promedios
+                        // Cálculo de Promedios
                         promedios[i] = (D > 0) ? (float)totales[i] / D : 0.0;
                         
-                        // CÃ¡lculo de Porcentajes
+                        // Cálculo de Porcentajes
                         if (sumaTotalNetos > 0) {
                             porcentaje[i] = ((float)totales[i] / sumaTotalNetos) * 100;
                         } else {
                             porcentaje[i] = 0.0;
                         }
                         
-                        // ImpresiÃ³n de fila del reporte (Formato tabular)
+                        // Impresión de fila del reporte (Formato tabular)
                         printf("| %-10s | %15d | %12.2f | %10.2f%% |\n", 
                                categorias[i], totales[i], promedios[i], porcentaje[i]);
                     }
